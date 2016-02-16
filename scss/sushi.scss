@@ -85,9 +85,20 @@ ul{
     display: inline-block;
     float: none;
     margin-right: 15px;
-
   }
-
+  @media (min-width: $screen-sm-min) {
+    width: auto;
+    padding: 0 15px 25px 15px;
+    .icon{
+      display: inline;
+    }
+    .icon-label{
+      display: inline;
+      text-align: left;
+      margin-left: 15px;
+      font-size: 18px;
+    }
+  }
 }
 
 
@@ -221,21 +232,53 @@ $hover-info-dim: 14px;
   padding-top: 15px;
   width: 100%;
   height: 60px;
+}
+.control{
   border-top: 1px solid $border-grey;
+  border-right: 1px solid $border-grey;
   border-bottom: 1px solid $primary-color;
 }
-.icon-hidden{
-  color: $border-grey;
+.control-tab{
+  a:first-of-type{
+    li{
+      border-left: none;
+    }
+  }
+  a:not(:first-of-type), a:not(:last-of-type){
+    li{
+      .icon-active{
+        border-left: 1px solid $primary-color;
+      }
+      .icon-hidden{
+        
+      }
+    }
+  }
+  a:last-of-type{
+    li{
+      border-right: none;
+    }
+  }
+
 }
-.icon-hidden:not(:last-child){
-  border-right: 1px solid $border-grey;
-}
-.icon-active{
+.control.icon-active{
   border-top: 3px solid $primary-color;
-  border-left: none;
   border-right: 1px solid $primary-color;
   border-bottom: none;
 }
+.control.icon-hidden{
+  padding-top: 1px;
+  color: $border-grey;
+}
+// .icon-hidden:not(:last-child){
+//   border-right: 1px solid $border-grey;
+// }
+// .icon-active{
+//   border-top: 3px solid $primary-color;
+//   border-left: none;
+//   border-right: 1px solid $primary-color;
+//   border-bottom: none;
+// }
 #nav-shop::before{
   content: '\f07a';
 }

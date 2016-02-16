@@ -6,7 +6,7 @@ console.log(tabs);
 
 function changeTab(){
   console.log(this);
-  tab = this.querySelector('.icon');
+  tab = this.querySelector('.control');
   active = document.querySelector('.icon-active');
   active.classList.remove('icon-active');
   active.classList.add('icon-hidden');

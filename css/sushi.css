@@ -2492,6 +2492,17 @@ ul {
       display: inline-block;
       float: none;
       margin-right: 15px; } }
+  @media (min-width: 768px) {
+    .control {
+      width: auto;
+      padding: 0 15px 25px 15px; }
+      .control .icon {
+        display: inline; }
+      .control .icon-label {
+        display: inline;
+        text-align: left;
+        margin-left: 15px;
+        font-size: 18px; } }
 
 #drink, #food, #lab, #order {
   display: none; }
@@ -2598,21 +2609,28 @@ ul {
   font-size: 20px;
   padding-top: 15px;
   width: 100%;
-  height: 60px;
+  height: 60px; }
+
+.control {
   border-top: 1px solid #c1cdd5;
+  border-right: 1px solid #c1cdd5;
   border-bottom: 1px solid #3da3dd; }
 
-.icon-hidden {
-  color: #c1cdd5; }
+.control-tab a:first-of-type li {
+  border-left: none; }
+.control-tab a:not(:first-of-type) li .icon-active, .control-tab a:not(:last-of-type) li .icon-active {
+  border-left: 1px solid #3da3dd; }
+.control-tab a:last-of-type li {
+  border-right: none; }
 
-.icon-hidden:not(:last-child) {
-  border-right: 1px solid #c1cdd5; }
-
-.icon-active {
+.control.icon-active {
   border-top: 3px solid #3da3dd;
-  border-left: none;
   border-right: 1px solid #3da3dd;
   border-bottom: none; }
+
+.control.icon-hidden {
+  padding-top: 1px;
+  color: #c1cdd5; }
 
 #nav-shop::before {
   content: '\f07a'; }
