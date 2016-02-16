@@ -2456,23 +2456,42 @@ ul {
     position: relative;
     min-height: 1px;
     padding-left: 15px;
-    padding-right: 15px; }
-    @media (min-width: 992px) {
+    padding-right: 15px;
+    padding: 0 35px; }
+    @media (min-width: 768px) {
       .row .tab-item {
         float: left;
         width: 33.33333%; } }
 
 .control-tab {
-  width: 100%; }
-  @media (min-width: 768px) {
-    .control-tab {
-      width: auto;
+  padding-bottom: 30px;
+  padding-top: 20px;
+  color: #3da3dd;
+  position: relative; }
+  .control-tab > span.icon-hidden {
+    color: #c1cdd5; }
+  .control-tab a:hover, .control-tab a:focus {
+    color: #3da3dd; }
+    .control-tab a:hover > span.icon-hidden, .control-tab a:focus > span.icon-hidden {
+      color: #758e9e; }
+  @media (min-width: 480px) {
+    .control-tab > ul {
+      display: block;
       margin: 0 auto; } }
 
 .control {
+  font-size: 12px;
+  text-transform: capitalize;
+  position: relative;
   width: 20%;
   float: left;
   display: block; }
+  @media (min-width: 480px) {
+    .control {
+      width: 85px;
+      display: inline-block;
+      float: none;
+      margin-right: 15px; } }
 
 #drink, #food, #lab, #order {
   display: none; }
@@ -2484,10 +2503,7 @@ ul {
       text-align: left;
       padding: 0 10%; }
     .header .menu {
-      text-align: right;
-      width: 25px;
-      height: 25px;
-      background-color: #3da3dd; } }
+      text-align: right; } }
 
 .menu {
   text-align: center; }
@@ -2571,23 +2587,6 @@ ul {
 .menu {
   padding-top: 20px; }
 
-.control-tab {
-  margin: 0 auto;
-  padding-bottom: 30px;
-  padding-top: 20px;
-  color: #3da3dd; }
-  .control-tab > span.icon-hidden {
-    color: #c1cdd5; }
-  .control-tab a:hover, .control-tab a:focus {
-    color: #3da3dd; }
-    .control-tab a:hover > span.icon-hidden, .control-tab a:focus > span.icon-hidden {
-      color: #758e9e; }
-
-.control {
-  font-size: 12px;
-  text-transform: capitalize;
-  position: relative; }
-
 .icon-label, .icon {
   display: inline-block; }
 
@@ -2630,6 +2629,20 @@ ul {
 #nav-order::before {
   content: '\f0d1'; }
 
+#left-bar::before, #right-bar::after {
+  content: '';
+  position: absolute;
+  width: 500px;
+  border-bottom: 1px solid #3da3dd; }
+
+#left-bar::before {
+  left: -500px;
+  bottom: -2px; }
+
+#right-bar::after {
+  right: -500px;
+  bottom: 0; }
+
 .tab-item .img-holder {
   padding: 20px 0;
   background-color: #3da3dd; }
@@ -2641,5 +2654,34 @@ ul {
 .tab-item p {
   font-size: 17px;
   font-weight: lighter; }
+@media (min-width: 480px) {
+  .tab-item {
+    margin-bottom: 30px; }
+    .tab-item .img-holder, .tab-item .text-holder {
+      display: block;
+      margin: 0; }
+    .tab-item .img-holder {
+      width: 40%;
+      float: left; }
+    .tab-item .text-holder {
+      width: 50%;
+      float: right; }
+    .tab-item h2, .tab-item p {
+      margin: 0;
+      text-align: left; }
+    .tab-item h2 {
+      margin-bottom: 15px; } }
+@media (min-width: 768px) {
+  .tab-item {
+    width: 30%; }
+    .tab-item .img-holder, .tab-item .text-holder {
+      width: 100%;
+      display: block;
+      margin: 0; }
+    .tab-item h2, .tab-item p {
+      margin: 0;
+      text-align: left; }
+    .tab-item h2 {
+      margin: 15px 0; } }
 
 /*# sourceMappingURL=sushi.css.map */
