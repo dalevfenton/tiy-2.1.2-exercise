@@ -1,8 +1,6 @@
 var i;
 var tabs = document.getElementsByClassName('tab-link');
 var hoverInfo = document.querySelector('.hover-info');
-console.log( hoverInfo);
-// console.log(tabs);
 
 function changeTab(){
   //set functions
@@ -37,8 +35,6 @@ for(i=0; i < tabs.length; i++){
 function showHover(){
   document.querySelector('#hover-display').innerHTML = this.attributes.hovertext.value;
   document.querySelector('#hover-display').style.padding = '10px';
-  console.dir(this);
-  console.log(this.attributes.hovertext.value);
 }
 
 function hideHover(){
