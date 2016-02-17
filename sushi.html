@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Sushi Exercise</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/sushi.css" charset="utf-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link href="http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet" type="text/css">
@@ -13,7 +14,8 @@
       <div class="logo">
         <span class="blueprint-title">
           Blueprint
-          <span class="hover-info" hover-text="The Blueprints are a collection of basic and minimal website concepts, components, plugins and layouts with minimal style for easy adaption and usage, or simply for inspiration."></span>
+          <span id="hover-display"></span>
+          <span class="hover-info" hovertext="The Blueprints are a collection of basic and minimal website concepts, components, plugins and layouts with minimal style for easy adaption and usage, or simply for inspiration."></span>
         </span>
       </div>
       <div class="title">Responsive Full Width Tabs</div>
@@ -29,11 +31,11 @@
     <div class="row control-tab">
       <ul>
         <!-- test test -->
-        <a href="#" class="tab-link"><li id="left-bar" class="control icon-active"><span id="nav-shop" class="icon shop"></span><span class="icon-label">shop</span></li></a>
-        <a href="#" class="tab-link"><li class="control icon-hidden"><span id="nav-drink" class="icon drink"></span><span class="icon-label">drinks</span></li></a>
-        <a href="#" class="tab-link"><li class="control icon-hidden"><span id="nav-food" class="icon food"></span><span class="icon-label">food</span></li></a>
-        <a href="#" class="tab-link"><li class="control icon-hidden"><span id="nav-lab" class="icon lab"></span><span class="icon-label">lab</span></li></a>
-        <a href="#" class="tab-link"><li id="right-bar" class="control icon-hidden"><span id="nav-order" class="icon order"></span><span class="icon-label">order</span></li></a>
+        <a href="#" class="tab-link"><li id="control-shop" class="control icon-active"><span id="nav-shop" class="icon shop"></span><span class="icon-label">shop</span></li></a>
+        <a href="#" class="tab-link"><li id="control-drink" class="control icon-hidden"><span id="nav-drink" class="icon drink"></span><span class="icon-label">drinks</span></li></a>
+        <a href="#" class="tab-link"><li id="control-food" class="control icon-hidden"><span id="nav-food" class="icon food"></span><span class="icon-label">food</span></li></a>
+        <a href="#" class="tab-link"><li id="control-lab" class="control icon-hidden"><span id="nav-lab" class="icon lab"></span><span class="icon-label">lab</span></li></a>
+        <a href="#" class="tab-link"><li id="control-order" class="control icon-hidden"><span id="nav-order" class="icon order"></span><span class="icon-label">order</span></li></a>
       </ul>
     </div>
     <div id="shop" class="row tab-row tab-active">

@@ -4,6 +4,8 @@ $icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 $primary-color: rgba(61, 163, 221, 1);
 $background-color: rgba(255, 255, 255, 1);
 $border-grey: rgba(193, 205, 213, 1);
+$tab-bottom-border: 18px;
+$tab-top-padding: 10px;
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 
 
@@ -49,6 +51,7 @@ ul{
     padding: 0 35px;
   }
 }
+
 .control-tab{
   padding-bottom: 30px;
   padding-top: 20px;
@@ -84,7 +87,7 @@ ul{
     width: 85px;
     display: inline-block;
     float: none;
-    margin-right: 15px;
+    margin-right: $tab-bottom-border - 3;
   }
   @media (min-width: $screen-sm-min) {
     width: auto;
@@ -102,7 +105,7 @@ ul{
 }
 
 
-#drink, #food, #lab, #order {
+.tab-hidden {
   display: none;
 }
 //---------------------------------------------------------------------------
@@ -121,7 +124,19 @@ ul{
       text-align: right;
     }
   }
-
+.logo{
+  position: relative;
+  #hover-display{
+    font-size: 10px;
+    position: absolute;
+    width: 200%;
+    background: $primary-color;
+    color: $background-color;
+    top: 20px;
+    left: -65px;
+    z-index: 20;
+  }
+}
 }
 .menu{
   text-align: center;
@@ -233,52 +248,85 @@ $hover-info-dim: 14px;
   width: 100%;
   height: 60px;
 }
-.control{
-  border-top: 1px solid $border-grey;
-  border-right: 1px solid $border-grey;
-  border-bottom: 1px solid $primary-color;
-}
+
 .control-tab{
-  a:first-of-type{
-    li{
-      border-left: none;
+
+  .control{
+    border-top: 1px solid $border-grey;
+    border-right: 1px solid $border-grey;
+    border-bottom: 1px solid $primary-color;
+    color: $border-grey;
+    padding-top: 1px;
+    @media (min-width: $screen-xs-min) {
+      border-left: 1px solid $border-grey;
+      padding-top: $tab-top-padding;
     }
   }
-  a:not(:first-of-type), a:not(:last-of-type){
-    li{
-      .icon-active{
-        border-left: 1px solid $primary-color;
-      }
-      .icon-hidden{
-        
+
+  @media (min-width: $screen-xs-min) {
+    a:not(:last-of-type){
+      li{
+        position: relative;
+        &::after{
+          position: absolute;
+          content: '';
+          width: $tab-bottom-border;
+          border-bottom: 1px solid $primary-color;
+          bottom: -1px;
+          right: -1 * ( $tab-bottom-border + 1);
+        }
       }
     }
   }
-  a:last-of-type{
-    li{
-      border-right: none;
+  .icon-active{
+    color: $primary-color;
+    border-top: 3px solid $primary-color;
+    border-left: 1px solid $primary-color;
+    border-right: 1px solid $primary-color;
+    border-bottom: none;
+    padding-top: 0;
+    @media (min-width: $screen-xs-min) {
+      padding-top: $tab-top-padding - 1;
+    }
+  }
+
+  .icon-hidden{
+    @media (min-width: $screen-xs-min) {
+      padding-top: $tab-top-padding + 1;
     }
   }
 
 }
-.control.icon-active{
-  border-top: 3px solid $primary-color;
-  border-right: 1px solid $primary-color;
-  border-bottom: none;
-}
-.control.icon-hidden{
-  padding-top: 1px;
-  color: $border-grey;
-}
-// .icon-hidden:not(:last-child){
-//   border-right: 1px solid $border-grey;
-// }
-// .icon-active{
+
+// .control.icon-active{
 //   border-top: 3px solid $primary-color;
-//   border-left: none;
 //   border-right: 1px solid $primary-color;
 //   border-bottom: none;
+//   @media (min-width: $screen-xs-min) {
+//     border-left: 1px solid $primary-color;
+//   }
 // }
+// .control.icon-hidden{
+//   color: $border-grey;
+// }
+
+#control-shop::before, #control-order::after{
+    content: '';
+    position: absolute;
+    width: 2000px;
+    border-bottom: 1px solid $primary-color;
+}
+#control-shop::before{
+    left: -2000px;
+    bottom: -1px;
+}
+#control-order::after{
+    right: -2000px;
+    bottom: -1px;
+}
+
+
+//icons for menu tabs
 #nav-shop::before{
   content: '\f07a';
 }
@@ -294,20 +342,8 @@ $hover-info-dim: 14px;
 #nav-order::before{
   content: '\f0d1';
 }
-#left-bar::before, #right-bar::after{
-    content: '';
-    position: absolute;
-    width: 500px;
-    border-bottom: 1px solid $primary-color;
-}
-#left-bar::before{
-    left: -500px;
-    bottom: -2px;
-}
-#right-bar::after{
-    right: -500px;
-    bottom: 0;
-}
+
+//styles for items inside of articles
 .tab-item{
   .img-holder{
     padding: 20px 0;

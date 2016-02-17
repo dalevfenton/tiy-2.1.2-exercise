@@ -2504,7 +2504,7 @@ ul {
         margin-left: 15px;
         font-size: 18px; } }
 
-#drink, #food, #lab, #order {
+.tab-hidden {
   display: none; }
 
 .header {
@@ -2515,6 +2515,17 @@ ul {
       padding: 0 10%; }
     .header .menu {
       text-align: right; } }
+  .header .logo {
+    position: relative; }
+    .header .logo #hover-display {
+      font-size: 10px;
+      position: absolute;
+      width: 200%;
+      background: #3da3dd;
+      color: white;
+      top: 20px;
+      left: -65px;
+      z-index: 20; }
 
 .menu {
   text-align: center; }
@@ -2611,26 +2622,53 @@ ul {
   width: 100%;
   height: 60px; }
 
-.control {
+.control-tab .control {
   border-top: 1px solid #c1cdd5;
   border-right: 1px solid #c1cdd5;
+  border-bottom: 1px solid #3da3dd;
+  color: #c1cdd5;
+  padding-top: 1px; }
+  @media (min-width: 480px) {
+    .control-tab .control {
+      border-left: 1px solid #c1cdd5;
+      padding-top: 10px; } }
+@media (min-width: 480px) {
+  .control-tab a:not(:last-of-type) li {
+    position: relative; }
+    .control-tab a:not(:last-of-type) li::after {
+      position: absolute;
+      content: '';
+      width: 18px;
+      border-bottom: 1px solid #3da3dd;
+      bottom: -1px;
+      right: -19px; } }
+.control-tab .icon-active {
+  color: #3da3dd;
+  border-top: 3px solid #3da3dd;
+  border-left: 1px solid #3da3dd;
+  border-right: 1px solid #3da3dd;
+  border-bottom: none;
+  padding-top: 0; }
+  @media (min-width: 480px) {
+    .control-tab .icon-active {
+      padding-top: 9px; } }
+@media (min-width: 480px) {
+  .control-tab .icon-hidden {
+    padding-top: 11px; } }
+
+#control-shop::before, #control-order::after {
+  content: '';
+  position: absolute;
+  width: 2000px;
   border-bottom: 1px solid #3da3dd; }
 
-.control-tab a:first-of-type li {
-  border-left: none; }
-.control-tab a:not(:first-of-type) li .icon-active, .control-tab a:not(:last-of-type) li .icon-active {
-  border-left: 1px solid #3da3dd; }
-.control-tab a:last-of-type li {
-  border-right: none; }
+#control-shop::before {
+  left: -2000px;
+  bottom: -1px; }
 
-.control.icon-active {
-  border-top: 3px solid #3da3dd;
-  border-right: 1px solid #3da3dd;
-  border-bottom: none; }
-
-.control.icon-hidden {
-  padding-top: 1px;
-  color: #c1cdd5; }
+#control-order::after {
+  right: -2000px;
+  bottom: -1px; }
 
 #nav-shop::before {
   content: '\f07a'; }
@@ -2646,20 +2684,6 @@ ul {
 
 #nav-order::before {
   content: '\f0d1'; }
-
-#left-bar::before, #right-bar::after {
-  content: '';
-  position: absolute;
-  width: 500px;
-  border-bottom: 1px solid #3da3dd; }
-
-#left-bar::before {
-  left: -500px;
-  bottom: -2px; }
-
-#right-bar::after {
-  right: -500px;
-  bottom: 0; }
 
 .tab-item .img-holder {
   padding: 20px 0;
