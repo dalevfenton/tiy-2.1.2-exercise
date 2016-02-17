@@ -298,18 +298,6 @@ $hover-info-dim: 14px;
 
 }
 
-// .control.icon-active{
-//   border-top: 3px solid $primary-color;
-//   border-right: 1px solid $primary-color;
-//   border-bottom: none;
-//   @media (min-width: $screen-xs-min) {
-//     border-left: 1px solid $primary-color;
-//   }
-// }
-// .control.icon-hidden{
-//   color: $border-grey;
-// }
-
 #control-shop::before, #control-order::after{
     content: '';
     position: absolute;
